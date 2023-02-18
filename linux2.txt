@@ -1,0 +1,41 @@
+Welcome to JS/Linux (i586)
+ 
+Use 'vflogin username' to connect to your account.
+You can create a new account at https://vfsync.org/signup .
+Use 'export_file filename' to export a file to your computer.
+Imported files are written to the home directory.
+ 
+localhost:~# cd /
+localhost:/# mkdir -p /home/user/start && touch /home/user/start/1.txt
+localhost:/# ls
+bin    etc    lib    mnt    proc   run    srv    tmp    var
+dev    home   media  opt    root   sbin   sys    usr
+localhost:/# echo "Start" >> /home/user/start/1.txt
+localhost:/# cat /home/user/start/1.txt
+Start
+localhost:/# date >> /home/user/start/1.txt
+localhost:/# cat /home/user/start/1.txt
+Start
+Sat Feb 18 23:44:19 UTC 2023
+localhost:/# mkdir -p /opt/task && cp /home/user/start/1.txt /opt/task/start.txt
+localhost:/# cd opt
+localhost:/opt# ls
+task  temu
+localhost:/opt# cd tast
+sh: cd: can't cd to tast: No such file or directory
+localhost:/opt# cd task
+localhost:/opt/task# ls
+start.txt
+localhost:/opt/task# cd /
+localhost:/# ls -la / | tail -n 4 >> /opt/task/start.txt
+localhost:/# cd /opt/task/
+localhost:/opt/task# ls
+start.txt
+localhost:/opt/task# cat start.txt
+Start
+Sat Feb 18 23:44:19 UTC 2023
+dr-xr-xr-x   12 root     root             0 Feb 18 23:42 sys
+drwxrwxrwt    2 root     root            37 Jan  9  2021 tmp
+drwxr-xr-x   10 root     root           229 Jun 24  2020 usr
+drwxr-xr-x   16 root     root           348 Aug 27  2020 var
+localhost:/opt/task#
